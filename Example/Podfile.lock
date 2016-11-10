@@ -1,0 +1,16 @@
+PODS:
+  - CPYGridPagingLayout (0.1.0)
+
+DEPENDENCIES:
+  - CPYGridPagingLayout (from `../`)
+
+EXTERNAL SOURCES:
+  CPYGridPagingLayout:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CPYGridPagingLayout: bc45be2d6586084066ffa3721c9b7094a9a368c4
+
+PODFILE CHECKSUM: e01623c86cafd5a0a10fdbc61e33284bbb0f6c40
+
+COCOAPODS: 1.1.1

@@ -1,0 +1,22 @@
+{
+  "name": "CPYGridPagingLayout",
+  "version": "0.1.0",
+  "summary": "A short description of CPYGridPagingLayout.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/CPYGridPagingLayout",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Cielpy": "beijiu572@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/CPYGridPagingLayout.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "CPYGridPagingLayout/Classes/**/*"
+}
