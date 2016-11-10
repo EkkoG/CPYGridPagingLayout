@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CPYGridPagingLayout_Example' do
+  pod 'CPYGridPagingLayout', :path => '../'
+
+  target 'CPYGridPagingLayout_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
