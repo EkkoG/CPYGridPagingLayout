@@ -9,8 +9,8 @@
 
 A UICollectionViewLayout subclass used to show list like a grid view.
 
-![](https://ws3.sinaimg.cn/large/74681984gw1f9nhla7xe3j20hs0vkjs8.jpg
-)
+![](https://ws3.sinaimg.cn/large/74681984gw1f9nz0pjyo5j20hs0vk74x.jpg)
+
 
 ## Installation
 
