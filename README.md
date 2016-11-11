@@ -1,6 +1,6 @@
 # CPYGridPagingLayout
 
-[![CI Status](http://img.shields.io/travis/Cielpy/CPYGridPagingLayout.svg?style=flat)](https://travis-ci.org/Cielpy/CPYGridPagingLayout)
+[![CI Status](http://img.shields.io/travis/cielpy/CPYGridPagingLayout.svg?style=flat)](https://travis-ci.org/Cielpy/CPYGridPagingLayout)
 [![Version](https://img.shields.io/cocoapods/v/CPYGridPagingLayout.svg?style=flat)](http://cocoapods.org/pods/CPYGridPagingLayout)
 [![License](https://img.shields.io/cocoapods/l/CPYGridPagingLayout.svg?style=flat)](http://cocoapods.org/pods/CPYGridPagingLayout)
 [![Platform](https://img.shields.io/cocoapods/p/CPYGridPagingLayout.svg?style=flat)](http://cocoapods.org/pods/CPYGridPagingLayout)
