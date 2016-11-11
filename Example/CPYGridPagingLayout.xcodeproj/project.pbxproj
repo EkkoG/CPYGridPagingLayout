@@ -24,6 +24,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		96F81A6F1DD4D77800674C99 /* CPYGridDemoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F81A6E1DD4D77800674C99 /* CPYGridDemoCollectionViewCell.m */; };
+		96FF20591DD5671A00AA6249 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96FF20581DD5671A00AA6249 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		8E06E407C3867CA89D2205D6 /* CPYGridPagingLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CPYGridPagingLayout.podspec; path = ../CPYGridPagingLayout.podspec; sourceTree = "<group>"; };
 		96F81A6D1DD4D77800674C99 /* CPYGridDemoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPYGridDemoCollectionViewCell.h; sourceTree = "<group>"; };
 		96F81A6E1DD4D77800674C99 /* CPYGridDemoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPYGridDemoCollectionViewCell.m; sourceTree = "<group>"; };
+		96FF20581DD5671A00AA6249 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		AF42D8FC3452FF6DF29C5569 /* Pods-CPYGridPagingLayout_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPYGridPagingLayout_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CPYGridPagingLayout_Tests/Pods-CPYGridPagingLayout_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B033467A9BD88759A646F6E8 /* Pods-CPYGridPagingLayout_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPYGridPagingLayout_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CPYGridPagingLayout_Tests/Pods-CPYGridPagingLayout_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB7000CBE83A9E60A45C6A66 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				6003F5A6195388D20070C39A /* CPYViewController.m */,
 				96F81A6D1DD4D77800674C99 /* CPYGridDemoCollectionViewCell.h */,
 				96F81A6E1DD4D77800674C99 /* CPYGridDemoCollectionViewCell.m */,
+				96FF20581DD5671A00AA6249 /* Launch Screen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
@@ -283,6 +286,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				96FF20591DD5671A00AA6249 /* Launch Screen.storyboard in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
