@@ -23,7 +23,8 @@ static NSString *const kCPYGridPageCellIdentifier = @"com.cielpy.home.cell";
     [super viewDidLoad];
 //	 Do any additional setup after loading the view, typically from a nib.
     CPYGridPagingLayout *layout = [[CPYGridPagingLayout alloc] init];
-    layout.cloumOfLine = 3;
+    layout.numberOfColum = 3;
+    layout.numberOfLine = 3;
     layout.lineSpacing = 10;
     layout.itemSpacing = 10;
     UICollectionView *v = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:layout];

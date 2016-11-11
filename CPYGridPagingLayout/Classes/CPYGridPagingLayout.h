@@ -12,12 +12,10 @@
 
 @property (nonatomic, assign) NSInteger numberOfLine;
 
+@property (nonatomic, assign) NSInteger numberOfColum;
+
 @property (nonatomic, assign) CGFloat itemSpacing;
 
 @property (nonatomic, assign) CGFloat lineSpacing;
-
-@property (nonatomic, assign) NSInteger cloumOfLine;
-
-@property (nonatomic, assign) BOOL pagingEnabled;
 
 @end

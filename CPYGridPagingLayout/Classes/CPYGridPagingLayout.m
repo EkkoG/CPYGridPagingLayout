@@ -39,7 +39,7 @@
     _numberOfLine = 2;
     _lineSpacing = 0;
     _itemSpacing = 0;
-    _cloumOfLine = 4;
+    _numberOfColum = 4;
 }
 
 - (void)prepareLayout {
@@ -48,34 +48,27 @@
         return;
     }
     
-    NSInteger possiblePages = count / (self.numberOfLine * self.cloumOfLine);
-    NSInteger reminder = count % (self.numberOfLine * self.cloumOfLine);
+    NSInteger possiblePages = count / (self.numberOfLine * self.numberOfColum);
+    NSInteger reminder = count % (self.numberOfLine * self.numberOfColum);
     self.pageNumber = (reminder == 0 ? possiblePages : (possiblePages + 1));
     
-    CGFloat availableWidht = CGRectGetWidth(self.collectionView.bounds) - (self.cloumOfLine - 1) * self.itemSpacing;
-    self.itemWidth = availableWidht / self.cloumOfLine;
+    CGFloat availableWidht = CGRectGetWidth(self.collectionView.bounds) - (self.numberOfColum - 1) * self.itemSpacing;
+    self.itemWidth = availableWidht / self.numberOfColum;
     
     
     CGFloat avilableHeight = CGRectGetHeight(self.collectionView.bounds) - (self.numberOfLine - 1) * self.lineSpacing;
     self.itemHeight = avilableHeight / self.numberOfLine;
     
-    NSMutableArray <NSNumber *> *xArr = [NSMutableArray array];
-    CGFloat x = 0;
-    for (int i = 0; i < self.cloumOfLine; i++) {
-        [xArr addObject:@(x)];
-        x += self.itemWidth;
-        x += self.itemSpacing;
-    }
-    
     NSMutableArray *attributes = [NSMutableArray array];
     for (int i = 0 ; i < count; i++) {
-        NSInteger pageItemNumber = self.cloumOfLine * self.numberOfLine;
+        NSInteger pageItemNumber = self.numberOfColum * self.numberOfLine;
         NSInteger page = i / pageItemNumber;
         
-        NSInteger colum = i % pageItemNumber % self.cloumOfLine;
-        NSInteger line = i % pageItemNumber / self.cloumOfLine;
+        NSInteger colum = i % pageItemNumber % self.numberOfColum;
+        NSInteger line = i % pageItemNumber / self.numberOfColum;
         
-        CGFloat x = xArr[colum].floatValue;
+        
+        CGFloat x = (self.itemSpacing + self.itemWidth) * colum;
         x += page * CGRectGetWidth(self.collectionView.bounds);
         
         CGFloat y = (self.lineSpacing + self.itemHeight) * line;
