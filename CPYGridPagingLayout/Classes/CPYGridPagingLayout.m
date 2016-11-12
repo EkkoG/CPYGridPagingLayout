@@ -107,4 +107,26 @@
     return [arr copy];
 }
 
+#pragma mark - setters
+
+- (void)setItemSpacing:(CGFloat)itemSpacing {
+    _itemSpacing = itemSpacing;
+    [self invalidateLayout];
+}
+
+- (void)setLineSpacing:(CGFloat)lineSpacing {
+    _lineSpacing = lineSpacing;
+    [self invalidateLayout];
+}
+
+- (void)setNumberOfLine:(NSInteger)numberOfLine {
+    _numberOfLine = numberOfLine;
+    [self invalidateLayout];
+}
+
+- (void)setNumberOfColum:(NSInteger)numberOfColum {
+    _numberOfColum = numberOfColum;
+    [self invalidateLayout];
+}
+
 @end
