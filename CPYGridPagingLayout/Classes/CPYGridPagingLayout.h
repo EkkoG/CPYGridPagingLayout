@@ -10,12 +10,12 @@
 
 @interface CPYGridPagingLayout : UICollectionViewLayout
 
-@property (nonatomic, assign) NSInteger numberOfLine;
+@property (nonatomic, assign) IBInspectable NSInteger numberOfLine;
 
-@property (nonatomic, assign) NSInteger numberOfColum;
+@property (nonatomic, assign) IBInspectable NSInteger numberOfColum;
 
-@property (nonatomic, assign) CGFloat itemSpacing;
+@property (nonatomic, assign) IBInspectable CGFloat itemSpacing;
 
-@property (nonatomic, assign) CGFloat lineSpacing;
+@property (nonatomic, assign) IBInspectable CGFloat lineSpacing;
 
 @end

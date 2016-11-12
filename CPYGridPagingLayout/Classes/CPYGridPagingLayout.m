@@ -41,6 +41,17 @@
     _itemSpacing = 0;
     _numberOfColum = 4;
 }
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
+    return !CGSizeEqualToSize(self.collectionView.bounds.size, newBounds.size);
+}
+
+- (void)invalidateLayout {
+    [super invalidateLayout];
+    self.attributes = nil;
+    self.itemWidth = 0;
+    self.itemHeight = 0;
+    self.pageNumber = 0;
+}
 
 - (void)prepareLayout {
     NSInteger count = [self.collectionView numberOfItemsInSection:0];

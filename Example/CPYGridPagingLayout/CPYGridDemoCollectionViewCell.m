@@ -27,6 +27,10 @@
 
 - (void)setup {
     [self addSubview:self.textLabel];
+}
+
+- (void)setBounds:(CGRect)bounds {
+    [super setBounds:bounds];
     self.textLabel.frame = self.bounds;
 }
 
