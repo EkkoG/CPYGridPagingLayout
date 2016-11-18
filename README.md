@@ -49,6 +49,14 @@ it, simply add the following line to your Podfile:
 pod "CPYGridPagingLayout"
 ```
 
+You can install CPYGridPagingLayout with [Carthage](https://github.com/Carthage/Carthage) too, just write this line to your Cartfile:
+
+```
+github "cielpy/CPYGridPagingLayout"
+```
+
+then follow the official tutorial to config your project.
+
 ## Contact
 
 Cielpy, beijiu572@gmail.com
