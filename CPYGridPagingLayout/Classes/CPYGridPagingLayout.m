@@ -41,6 +41,7 @@
     _itemSpacing = 0;
     _numberOfColum = 4;
     _direction = CPYGridPagingLayoutDirectionVertical;
+    _blankBetweenPages = NO;
 }
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
     return !CGSizeEqualToSize(self.collectionView.bounds.size, newBounds.size);
@@ -64,11 +65,36 @@
     NSInteger reminder = count % (self.numberOfLine * self.numberOfColum);
     self.pageNumber = (reminder == 0 ? possiblePages : (possiblePages + 1));
     
-    CGFloat availableWidht = CGRectGetWidth(self.collectionView.bounds) - (self.numberOfColum - 1) * self.itemSpacing;
+    NSInteger numberOfItemSpacing = self.numberOfColum;
+    NSInteger numberOfLineSpacing = self.numberOfLine;
+    
+    CGFloat xOffset = 0;
+    CGFloat yOffset = 0;
+    
+    if (self.direction == CPYGridPagingLayoutDirectionHorizontal) {
+        xOffset = CGRectGetWidth(self.collectionView.bounds);
+        
+        numberOfLineSpacing -= 1;
+        
+        if (!self.blankBetweenPages) {
+            numberOfItemSpacing -= 1;
+        }
+    }
+    else if (self.direction == CPYGridPagingLayoutDirectionVertical) {
+        yOffset = CGRectGetHeight(self.collectionView.bounds);
+        
+        numberOfItemSpacing -= 1;
+        
+        if (!self.blankBetweenPages) {
+            numberOfLineSpacing -= 1;
+        }
+    }
+    
+    CGFloat availableWidht = CGRectGetWidth(self.collectionView.bounds) - numberOfItemSpacing * self.itemSpacing;
     self.itemWidth = availableWidht / self.numberOfColum;
     
     
-    CGFloat avilableHeight = CGRectGetHeight(self.collectionView.bounds) - (self.numberOfLine - 1) * self.lineSpacing;
+    CGFloat avilableHeight = CGRectGetHeight(self.collectionView.bounds) - numberOfLineSpacing * self.lineSpacing;
     self.itemHeight = avilableHeight / self.numberOfLine;
     
     NSMutableArray *attributes = [NSMutableArray array];
@@ -83,15 +109,8 @@
         CGFloat x = (self.itemSpacing + self.itemWidth) * colum;
         CGFloat y = (self.lineSpacing + self.itemHeight) * line;
         
-        if (self.direction == CPYGridPagingLayoutDirectionHorizontal) {
-            x += page * CGRectGetWidth(self.collectionView.bounds);
-        }
-        else if (self.direction == CPYGridPagingLayoutDirectionVertical) {
-            y += page * CGRectGetHeight(self.collectionView.bounds);
-        }
-        else {
-            NSAssert(NO, @"unknown direction!");
-        }
+        x += page * xOffset;
+        y += page * yOffset;
         
         CGRect frame = CGRectMake(x, y, self.itemWidth, self.itemHeight);
         
@@ -147,7 +166,10 @@
 
 - (void)setDirection:(CPYGridPagingLayoutDirection)direction {
     _direction = direction;
+    NSAssert(direction == CPYGridPagingLayoutDirectionHorizontal || direction == CPYGridPagingLayoutDirectionVertical,@"unknown direction!" @"unknown direction!");
     [self invalidateLayout];
 }
+
+
 
 @end

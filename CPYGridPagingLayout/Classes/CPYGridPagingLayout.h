@@ -25,4 +25,6 @@ typedef NS_ENUM(NSInteger, CPYGridPagingLayoutDirection) {
 
 @property (nonatomic, assign) CPYGridPagingLayoutDirection direction;
 
+@property (nonatomic, assign) IBInspectable BOOL blankBetweenPages;
+
 @end
