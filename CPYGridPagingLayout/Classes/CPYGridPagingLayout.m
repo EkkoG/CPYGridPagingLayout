@@ -40,6 +40,7 @@
     _lineSpacing = 0;
     _itemSpacing = 0;
     _numberOfColum = 4;
+    _direction = CPYGridPagingLayoutDirectionVertical;
 }
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
     return !CGSizeEqualToSize(self.collectionView.bounds.size, newBounds.size);
@@ -80,9 +81,17 @@
         
         
         CGFloat x = (self.itemSpacing + self.itemWidth) * colum;
-        x += page * CGRectGetWidth(self.collectionView.bounds);
-        
         CGFloat y = (self.lineSpacing + self.itemHeight) * line;
+        
+        if (self.direction == CPYGridPagingLayoutDirectionHorizontal) {
+            x += page * CGRectGetWidth(self.collectionView.bounds);
+        }
+        else if (self.direction == CPYGridPagingLayoutDirectionVertical) {
+            y += page * CGRectGetHeight(self.collectionView.bounds);
+        }
+        else {
+            NSAssert(YES, @"非法参数");
+        }
         
         CGRect frame = CGRectMake(x, y, self.itemWidth, self.itemHeight);
         
@@ -91,10 +100,17 @@
         [attributes addObject:attribute];
     }
     self.attributes = [attributes copy];
+    
 }
 
 - (CGSize)collectionViewContentSize {
-    return CGSizeMake(CGRectGetWidth(self.collectionView.bounds) * self.pageNumber, CGRectGetHeight(self.collectionView.bounds));
+    if (self.direction == CPYGridPagingLayoutDirectionHorizontal) {
+        return CGSizeMake(CGRectGetWidth(self.collectionView.bounds) * self.pageNumber, CGRectGetHeight(self.collectionView.bounds));
+    }
+    if (self.direction == CPYGridPagingLayoutDirectionVertical) {
+        return CGSizeMake(CGRectGetWidth(self.collectionView.bounds), CGRectGetHeight(self.collectionView.bounds) * self.pageNumber);
+    }
+    return CGSizeZero;
 }
 
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect {
@@ -126,6 +142,11 @@
 
 - (void)setNumberOfColum:(NSInteger)numberOfColum {
     _numberOfColum = numberOfColum;
+    [self invalidateLayout];
+}
+
+- (void)setDirection:(CPYGridPagingLayoutDirection)direction {
+    _direction = direction;
     [self invalidateLayout];
 }
 
