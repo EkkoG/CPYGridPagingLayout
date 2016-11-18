@@ -90,7 +90,7 @@
             y += page * CGRectGetHeight(self.collectionView.bounds);
         }
         else {
-            NSAssert(YES, @"非法参数");
+            NSAssert(NO, @"unknown direction!");
         }
         
         CGRect frame = CGRectMake(x, y, self.itemWidth, self.itemHeight);
