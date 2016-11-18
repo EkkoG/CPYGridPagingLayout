@@ -7,7 +7,7 @@
 //
 
 #import "CPYViewController.h"
-#import "CPYGridPagingLayout.h"
+#import <CPYGridPagingLayout/CPYGridPagingLayout.h>
 #import "CPYGridDemoCollectionViewCell.h"
 
 static NSString *const kCPYGridPageCellIdentifier = @"com.cielpy.home.cell";
