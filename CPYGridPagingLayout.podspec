@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CPYGridPagingLayout'
-  s.version          = '0.2.3'
+  s.version          = '0.2.4'
   s.summary          = 'A UICollectionViewLayout subclass used to show items like a grid.'
 
 # This description is used to generate tags and improve search results.
