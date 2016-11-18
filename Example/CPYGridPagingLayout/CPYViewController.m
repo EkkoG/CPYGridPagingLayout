@@ -30,8 +30,11 @@ static NSString *const kCPYGridPageCellIdentifier = @"com.cielpy.home.cell";
     CPYGridPagingLayout *layout = (CPYGridPagingLayout *)self.collectionView.collectionViewLayout;
     
     layout.direction = CPYGridPagingLayoutDirectionVertical;
+    layout.numberOfLine = 10;
+    layout.numberOfColum = 8;
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [layout setNumberOfColum:2];
+//        [layout setNumberOfColum:2];
     });
 }
 
@@ -43,7 +46,7 @@ static NSString *const kCPYGridPageCellIdentifier = @"com.cielpy.home.cell";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return 1000;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
