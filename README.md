@@ -5,12 +5,40 @@
 [![License](https://img.shields.io/cocoapods/l/CPYGridPagingLayout.svg?style=flat)](http://cocoapods.org/pods/CPYGridPagingLayout)
 [![Platform](https://img.shields.io/cocoapods/p/CPYGridPagingLayout.svg?style=flat)](http://cocoapods.org/pods/CPYGridPagingLayout)
 
-## Introduce
+## Overview
 
-A UICollectionViewLayout subclass used to show list like a grid view.
+CPYGridPagingLayout is a UICollectionViewLayout subclass used to show items like a grid.
 
-![](https://ws3.sinaimg.cn/large/74681984gw1f9nz0pjyo5j20hs0vk74x.jpg)
+![](https://ws3.sinaimg.cn/bmiddle/74681984gw1f9wnw40goej20hs0vkaas.jpg)
 
+## Features
+
+* Both horizontal and vertical layout support
+* Customized number of line and colum
+* Customized item spacing and line spacing 
+* Responsive UI support, you can change custom options anytime
+* IBInspectable support
+
+## Usage
+
+
+```
+    CPYGridPagingLayout *layout = [[CPYGridPagingLayout alloc] init];
+    layout.numberOfColum = 5;
+    layout.numberOfLine = 3;
+    layout.itemSpacing = 10;
+    layout.lineSpacing = 10;
+    layout.direction = CPYGridPagingLayoutDirectionVertical;
+    
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+    collectionView.dataSource = self;
+    collectionView.delegate = self;
+    [self.view addSubview:collectionView];
+    
+//    you can use autolayout to layout the collection view here
+    
+//    and then you can change the layout's custom options if you need
+```
 
 ## Installation
 
@@ -21,7 +49,7 @@ it, simply add the following line to your Podfile:
 pod "CPYGridPagingLayout"
 ```
 
-## Author
+## Contact
 
 Cielpy, beijiu572@gmail.com
 
