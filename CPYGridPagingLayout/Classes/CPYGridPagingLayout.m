@@ -42,6 +42,7 @@
     _numberOfColum = 4;
     _direction = CPYGridPagingLayoutDirectionVertical;
     _blankBetweenPages = NO;
+    _itemSize = CGSizeZero;
 }
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
     return !CGSizeEqualToSize(self.collectionView.bounds.size, newBounds.size);
@@ -90,12 +91,33 @@
         }
     }
     
-    CGFloat availableWidht = CGRectGetWidth(self.collectionView.bounds) - numberOfItemSpacing * self.itemSpacing;
-    self.itemWidth = availableWidht / self.numberOfColum;
-    
-    
-    CGFloat avilableHeight = CGRectGetHeight(self.collectionView.bounds) - numberOfLineSpacing * self.lineSpacing;
-    self.itemHeight = avilableHeight / self.numberOfLine;
+    if (CGSizeEqualToSize(self.itemSize, CGSizeZero)) {
+        CGFloat availableWidht = CGRectGetWidth(self.collectionView.bounds) - numberOfItemSpacing * self.itemSpacing;
+        self.itemWidth = availableWidht / self.numberOfColum;
+        
+        
+        CGFloat avilableHeight = CGRectGetHeight(self.collectionView.bounds) - numberOfLineSpacing * self.lineSpacing;
+        self.itemHeight = avilableHeight / self.numberOfLine;
+    }
+    else {
+        self.blankBetweenPages = YES;
+        
+        if (self.direction == CPYGridPagingLayoutDirectionHorizontal) {
+            self.itemWidth = self.itemSize.width;
+            
+            CGFloat avilableHeight = CGRectGetHeight(self.collectionView.bounds) - numberOfLineSpacing * self.lineSpacing;
+            self.itemHeight = avilableHeight / self.numberOfLine;
+            
+            xOffset = (self.itemSize.width + self.itemSpacing) * self.numberOfColum;
+        }
+        else if (self.direction == CPYGridPagingLayoutDirectionVertical) {
+            CGFloat availableWidht = CGRectGetWidth(self.collectionView.bounds) - numberOfItemSpacing * self.itemSpacing;
+            self.itemWidth = availableWidht / self.numberOfColum;
+            
+            self.itemHeight = self.itemSize.height;
+            yOffset = (self.itemSize.height + self.lineSpacing) * self.numberOfLine;
+        }
+    }
     
     NSMutableArray *attributes = [NSMutableArray array];
     for (int i = 0 ; i < count; i++) {
@@ -123,11 +145,21 @@
 }
 
 - (CGSize)collectionViewContentSize {
-    if (self.direction == CPYGridPagingLayoutDirectionHorizontal) {
-        return CGSizeMake(CGRectGetWidth(self.collectionView.bounds) * self.pageNumber, CGRectGetHeight(self.collectionView.bounds));
+    if (CGSizeEqualToSize(self.itemSize, CGSizeZero)) {
+        if (self.direction == CPYGridPagingLayoutDirectionHorizontal) {
+            return CGSizeMake(CGRectGetWidth(self.collectionView.bounds) * self.pageNumber, CGRectGetHeight(self.collectionView.bounds));
+        }
+        if (self.direction == CPYGridPagingLayoutDirectionVertical) {
+            return CGSizeMake(CGRectGetWidth(self.collectionView.bounds), CGRectGetHeight(self.collectionView.bounds) * self.pageNumber);
+        }
     }
-    if (self.direction == CPYGridPagingLayoutDirectionVertical) {
-        return CGSizeMake(CGRectGetWidth(self.collectionView.bounds), CGRectGetHeight(self.collectionView.bounds) * self.pageNumber);
+    else {
+        if (self.direction == CPYGridPagingLayoutDirectionHorizontal) {
+            return CGSizeMake((self.itemSize.width + self.itemSpacing) * self.numberOfColum * self.pageNumber, CGRectGetHeight(self.collectionView.bounds));
+        }
+        if (self.direction == CPYGridPagingLayoutDirectionVertical) {
+            return CGSizeMake(CGRectGetWidth(self.collectionView.bounds), (self.itemSize.height + self.lineSpacing) * self.numberOfLine * self.pageNumber);
+        }
     }
     return CGSizeZero;
 }
@@ -170,6 +202,9 @@
     [self invalidateLayout];
 }
 
-
+- (void)setItemSize:(CGSize )itemSize {
+    _itemSize = itemSize;
+    [self invalidateLayout];
+}
 
 @end

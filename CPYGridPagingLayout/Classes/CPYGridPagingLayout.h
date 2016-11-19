@@ -27,4 +27,13 @@ typedef NS_ENUM(NSInteger, CPYGridPagingLayoutDirection) {
 
 @property (nonatomic, assign) IBInspectable BOOL blankBetweenPages;
 
+
+/**
+ Default value is CGSizeZero, with default value, layout will calculate the item size to make the items full of the collectionView
+ if itemSize be set, for vertical layout, itemSize's width will be ignore, for horizontal layout, itemSize's height will be ignore.
+ 
+ Warming: if the option be set, blankBetweentPages will be automatically be set with YES.
+ */
+@property (nonatomic, assign) CGSize itemSize;
+
 @end

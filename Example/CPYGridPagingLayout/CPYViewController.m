@@ -10,6 +10,8 @@
 #import <CPYGridPagingLayout/CPYGridPagingLayout.h>
 #import "CPYGridDemoCollectionViewCell.h"
 
+#define CPYRandomColor [UIColor colorWithRed:arc4random() % 255 / 255.0f green:arc4random() % 255 / 255.0f blue:arc4random() % 255 / 255.0f alpha:1.0f]
+
 static NSString *const kCPYGridPageCellIdentifier = @"com.cielpy.home.cell";
 
 @interface CPYViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
@@ -30,20 +32,21 @@ static NSString *const kCPYGridPageCellIdentifier = @"com.cielpy.home.cell";
     CPYGridPagingLayout *layout = (CPYGridPagingLayout *)self.collectionView.collectionViewLayout;
     
     layout.direction = CPYGridPagingLayoutDirectionVertical;
-    layout.numberOfLine = 2;
-    layout.numberOfColum = 2;
-    layout.blankBetweenPages = YES;
+    layout.numberOfLine = 4;
+    layout.numberOfColum = 5;
+    layout.blankBetweenPages = NO;
+    layout.itemSize = CGSizeMake(30, 50);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CPYGridDemoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kCPYGridPageCellIdentifier forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor redColor];
+    cell.backgroundColor = CPYRandomColor;
     cell.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
     return cell;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return 200;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

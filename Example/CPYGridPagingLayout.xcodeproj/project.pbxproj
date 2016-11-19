@@ -255,6 +255,9 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Cielpy;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 9ATJLJZ6BL;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -533,6 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 9ATJLJZ6BL;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CPYGridPagingLayout/CPYGridPagingLayout-Prefix.pch";
 				INFOPLIST_FILE = "CPYGridPagingLayout/CPYGridPagingLayout-Info.plist";
@@ -550,6 +554,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 9ATJLJZ6BL;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CPYGridPagingLayout/CPYGridPagingLayout-Prefix.pch";
 				INFOPLIST_FILE = "CPYGridPagingLayout/CPYGridPagingLayout-Info.plist";
