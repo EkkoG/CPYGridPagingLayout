@@ -1,5 +1,5 @@
 PODS:
-  - CPYGridPagingLayout (0.2.4)
+  - CPYGridPagingLayout (0.3.0)
 
 DEPENDENCIES:
   - CPYGridPagingLayout (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CPYGridPagingLayout: 0bf3205e62f29b6a4336d5076045a105aefd59a5
+  CPYGridPagingLayout: 52d4bd1570e63f3b175d294ac6fa3b711a75d823
 
 PODFILE CHECKSUM: e01623c86cafd5a0a10fdbc61e33284bbb0f6c40
 
