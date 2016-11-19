@@ -56,6 +56,7 @@
     self.itemWidth = 0;
     self.itemHeight = 0;
     self.pageNumber = 0;
+    self.pageSize = CGSizeZero;
 }
 
 - (void)prepareLayout {
