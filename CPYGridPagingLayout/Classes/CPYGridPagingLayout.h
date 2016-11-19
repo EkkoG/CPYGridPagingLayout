@@ -34,6 +34,6 @@ typedef NS_ENUM(NSInteger, CPYGridPagingLayoutDirection) {
  
  Warming: if the option be set, blankBetweentPages will be automatically be set with YES.
  */
-@property (nonatomic, assign) CGSize itemSize;
+@property (nonatomic, assign) IBInspectable CGSize itemSize;
 
 @end
