@@ -191,7 +191,15 @@
 
 - (void)setDirection:(CPYGridPagingLayoutDirection)direction {
     _direction = direction;
-    NSAssert(direction == CPYGridPagingLayoutDirectionHorizontal || direction == CPYGridPagingLayoutDirectionVertical,@"unknown direction!" @"unknown direction!");
+    NSAssert(direction == CPYGridPagingLayoutDirectionHorizontal || direction == CPYGridPagingLayoutDirectionVertical, @"unknown direction!");
+    [self invalidateLayout];
+}
+
+- (void)setBlankBetweenPages:(BOOL)blankBetweenPages {
+    _blankBetweenPages = blankBetweenPages;
+    if (!blankBetweenPages) {
+        self.itemSize = CGSizeZero;
+    }
     [self invalidateLayout];
 }
 
