@@ -103,7 +103,6 @@
     self.pageSize = self.collectionView.bounds.size;
     
     if (!CGSizeEqualToSize(self.itemSize, CGSizeZero)) {
-        self.blankBetweenPages = YES;
         
         if (self.direction == CPYGridPagingLayoutDirectionHorizontal) {
             self.itemWidth = self.itemSize.width;
@@ -198,6 +197,9 @@
 
 - (void)setItemSize:(CGSize )itemSize {
     _itemSize = itemSize;
+    if (!CGSizeEqualToSize(self.itemSize, CGSizeZero)) {
+        self.blankBetweenPages = YES;
+    }
     [self invalidateLayout];
 }
 
