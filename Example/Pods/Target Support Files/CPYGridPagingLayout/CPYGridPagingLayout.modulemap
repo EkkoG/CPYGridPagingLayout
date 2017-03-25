@@ -1,6 +1,0 @@
-framework module CPYGridPagingLayout {
-  umbrella header "CPYGridPagingLayout-umbrella.h"
-
-  export *
-  module * { export * }
-}
